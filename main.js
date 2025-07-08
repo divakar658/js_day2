@@ -1,34 +1,10 @@
-function eat()
-{
-  return new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('eat');
-    }, 1000);
-  })
-}
-function sleep()
-{
-  return new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('sleep');
-    }, 1000);
-  })
-}
-function code()
-{
-  return new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('code');
-    }, 1000);
-  })
-}
-async function fun()
-{
-  let ans1=await eat();
-  console.log(ans1);
-  let ans2=await sleep();
-  console.log(ans2);
-  let ans3=await code();
-  console.log(ans3);
-}
-fun();
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(8000, '0.0.0.0', () => {
+  console.log('Server is running on http://192.168.1.5:8000');
+});
